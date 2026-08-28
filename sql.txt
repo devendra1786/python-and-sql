@@ -38,3 +38,448 @@ Output
 1 row updated
 
 =============================================one==================================================
+task2
+
+=================SQL=============================
+1. Table Creation
+
+-- Create database-----------
+
+CREATE DATABASE employees;
+
+USE employees;
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50) NOT NULL,
+    department VARCHAR(50) NOT NULL,
+    salary DECIMAL(10, 2) NOT NULL,
+    city VARCHAR(50) NOT NULL
+);
+
+select * from employees;
+
+2. Insert Sample Records
+
+
+-- Insert 10 employees records ---------------
+
+
+INSERT INTO employees (emp_id, emp_name, department, salary, city) VALUES
+(1, 'Anita', 'HR', 35000.00, 'Chennai'),
+(2, 'Arun', 'Development', 45000.00, 'Bangalore'),
+(3, 'Kiran', 'Testing', 28000.00, 'Hyderabad'),
+(4, 'Rohan', 'HR', 22000.00, 'Mumbai'),
+(5, 'Priya', 'Development', 55000.00, 'Chennai'),
+(6, 'Varun', 'Sales', 40000.00, 'Delhi'),
+(7, 'Aakash', 'Testing', 32000.00, 'Chennai'),
+(8, 'Meena', 'Finance', 48000.00, 'Bangalore'),
+(9, 'Suresh', 'Development', 60000.00, 'Hyderabad'),
+(10, 'Aman', 'HR', 29000.00, 'Delhi');
+
+
+3. Queries
+Filtering & Comparison Operators
+
+------- Employees with salary greater than 30,000 ---------------
+
+SELECT * FROM employees 
+WHERE salary > 30000;
+
+------ Employees with salary less than or equal to 40,000 ------------
+
+SELECT * FROM employees 
+WHERE salary <= 40000;
+
+
+------------ Employees whose department is not HR ----------
+
+SELECT * FROM employees 
+WHERE department <> 'HR';
+
+4. IN / NOT IN / BETWEEN
+
+--------- Employees belonging to HR, Testing, or Development ------------
+
+
+SELECT * FROM employees 
+WHERE department IN ('HR', 'Testing', 'Development');
+
+--------------Employees NOT belonging to HR or Testing --------------
+
+SELECT * FROM employees 
+WHERE department NOT IN ('HR', 'Testing');
+
+
+-------------- Employees with salary between 25,000 and 50,000 ----------------
+
+SELECT * FROM employees 
+WHERE salary BETWEEN 25000 AND 50000;
+
+5. Pattern Matching
+
+------------ Name starts with "A" ----------------
+
+SELECT * FROM employees 
+WHERE emp_name LIKE 'A%';
+
+---------- Name ends with "n" ---------
+
+SELECT * FROM employees 
+WHERE emp_name LIKE '%n';
+
+--------- Name contains "a" case-insensitive search ----------------
+
+SELECT * FROM employees 
+WHERE LOWER(emp_name) LIKE '%a%';
+
+------------ Name contains exactly 5 characters ----------------
+
+6. Logical Operators (AND, OR, NOT)
+
+----------- Department is HR AND salary > 30,000 -----------
+
+SELECT * FROM employees 
+WHERE department = 'HR' AND salary > 30000;
+
+------------ Department is HR OR city is Chennai -----------
+
+SELECT * FROM employees 
+WHERE department = 'HR' OR city = 'Chennai';
+
+
+----------- Department is NOT Testing ----------
+
+SELECT * FROM employees 
+WHERE NOT department = 'Testing';
+
+7. Sorting ORDER BY
+
+------------ Sorted by salary in ascending order ---------
+
+SELECT * FROM employees 
+ORDER BY salary ASC;
+
+----------- Sorted by salary in descending order -----------
+
+SELECT * FROM employees 
+ORDER BY salary DESC;
+
+----------- Sorted by employee name alphabetically ------------
+
+SELECT * FROM employees 
+ORDER BY emp_name ASC;
+
+8. Pagination LIMIT & OFFSET
+
+---------- Top 5 highest-paid employees ---------
+
+SELECT * FROM employees 
+ORDER BY salary DESC 
+LIMIT 5;
+
+----------- Skip the first 3 records and display the next 4 records ---------
+
+SELECT * FROM employees 
+LIMIT 4 OFFSET 3;
+=================================================== task3 ==============================
+
+--------------------- 1. Create Database --------------------------------
+
+CREATE DATABASE employee_db;
+USE employee_db;
+
+-------------------- 2. Create Employees Table ------------------------------
+
+CREATE TABLE employees (
+    emp_id INT,
+    emp_name VARCHAR(50),
+    salary DECIMAL(10,2),
+    department VARCHAR(50),
+    city VARCHAR(50),
+    joining_date DATE
+);
+
+--------------------------- 3. Insert 10 Employee Records ----------------------
+
+INSERT INTO employees
+(emp_id, emp_name, salary, department, city, joining_date)
+VALUES
+(1, 'devendra', 45600.50, 'IT', 'Chennai', '2026-01-15'),
+(2, 'Ravi', 52300.75, 'HR', 'Bangalore', '2026-05-20'),
+(3, 'Priya', 67800.25, 'Finance', 'Hyderabad', '2026-03-10'),
+(4, 'Kumar', 38900.80, 'Sales', 'Chennai', '2025-07-18'),
+(5, 'Anu', 74500.60, 'IT', 'Bangalore', '2024-11-25'),
+(6, 'Rahul', 51200.40, 'Marketing', 'Hyderabad', '2025-09-12'),
+(7, 'Sneha', 62500.90, 'HR', 'Chennai', '2022-12-05'),
+(8, 'Arjun', 83400.30, 'Finance', 'Bangalore', '2023-06-30'),
+(9, 'Divya', 46700.55, 'Sales', 'Hyderabad', '2023-02-14'),
+(10, 'Kiran', 58900.70, 'IT', 'Chennai', '2020-10-01');
+
+
+--------------------- 4. Numeric Functions ---------------------------------
+
+----------- 1. ROUND() --------------------
+
+SELECT
+    emp_name,
+    salary,
+    ROUND(salary) AS rounded_salary
+FROM employees;
+
+
+-------------- 2. FLOOR() --------------------
+
+SELECT
+    emp_name,
+    salary,
+    FLOOR(salary) AS floor_salary
+FROM employees;
+
+
+---------------- 3. CEIL() ---------------------
+
+SELECT
+    emp_name,
+    salary,
+    CEIL(salary) AS ceiling_salary
+FROM employees;
+
+----------------- 4. ABS() ----------------------------
+
+SELECT ABS(salary) AS absolute_salary
+FROM employees;
+
+-----------------------------------------------------------------
+SELECT ABS(1786) AS absolute_value;
+
+----------------- 5. POWER() ------------------------------
+
+SELECT emp_name, POWER(salary, 2) AS salary_square
+FROM employees;
+
+------------------ 6. SQRT() ----------------------------------
+
+SELECT SQRT(144) AS square_root;
+
+------------------ 7. MOD() ----------------------------------
+
+SELECT
+    emp_name,
+    salary,
+    MOD(salary, 1000) AS remainder
+FROM employees;
+
+=============== String Functions ===========================
+
+------------------ 1. CONCAT() -----------------------------
+
+SELECT
+    CONCAT(emp_name, ' - ', department) AS employee_details
+FROM employees;
+
+------------------ 2. LENGTH() -----------------------------------
+
+SELECT
+    emp_name,
+    LENGTH(emp_name) AS name_length
+FROM employees;
+
+------------------ 3. UPPER() ------------------------------
+
+SELECT
+    emp_name,
+    UPPER(emp_name) AS uppercase_name
+FROM employees;
+
+---------------- 4. LOWER() ----------------
+
+SELECT
+    emp_name,
+    LOWER(emp_name) AS lowercase_name
+FROM employees;
+
+---------------- 5.TRIM() ------------------------------
+
+SELECT TRIM('   devendra   ') AS trimmed_name;
+
+--------------------- 6.LTRIM() -----------------------------
+
+SELECT LTRIM('     devendra') AS name;
+
+---------------------- 7. RTRIM() -----------------------
+
+SELECT RTRIM('devendra     ') AS name;
+ 
+---------------------- 8. SUBSTRING() ------------------------
+
+SELECT
+    emp_name,
+    SUBSTRING(emp_name, 1, 3) AS first_three_characters
+FROM employees;
+
+--------------------- 9. REPLACE() ---------------------------------
+
+SELECT
+    emp_name,
+    REPLACE(emp_name, 'a', '$') AS modified_name
+FROM employees;
+
+================================== Date and Time Functions ===============================
+
+------------------------------ 1. CURDATE() ------------------
+
+SELECT CURDATE() AS today_date;
+
+------------------------- 2. CURTIME() --------------------
+
+SELECT CURTIME() AS today_time;
+
+----------------------- 3. NOW() --------------------------------
+
+SELECT NOW() AS today_datetime;
+
+-------------------------- 4. DATEDIFF() --------------------------------
+
+SELECT
+    emp_name,
+    joining_date,
+    CURDATE() AS today_date,
+    DATEDIFF(CURDATE(), joining_date) AS days_worked
+FROM employees;
+
+
+================================================task4=========================================
+
+--------------------------------- Create a database named company_db --------------------
+
+CREATE DATABASE company_db;
+
+USE company_db;
+
+INSERT INTO departments (dept_id, dept_name)
+VALUES
+(1, 'IT'),
+(2, 'HR'),
+(3, 'Finance'),
+(4, 'Sales');
+
+--------------------------------- Create a table named employees --------------------------------
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY AUTO_INCREMENT,
+    emp_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    department INT,
+    salary DECIMAL(10,2) CHECK (salary >= 15000),
+    city VARCHAR(50) DEFAULT 'Chennai',
+    status ENUM('Active', 'Inactive', 'On Leave') DEFAULT 'Active',
+    
+    FOREIGN KEY (department) REFERENCES departments(dept_id)
+);
+
+
+---------------------------- Insert a minimum of 10 valid employee records ----------------------------------
+
+INSERT INTO employees
+(emp_name, email, department, salary, city, status)
+VALUES
+('devendra', 'devendra@gmail.com', 1, 45000, 'Chennai', 'Active'),
+('Priya', 'priya@gmail.com', 2, 38000, 'Bangalore', 'Active'),
+('Arun', 'arun@gmail.com', 3, 42000, 'Hyderabad', 'Inactive'),
+('Sneha', 'sneha@gmail.com', 4, 35000, 'Chennai', 'Active'),
+('Kiran', 'kiran@gmail.com', 1, 50000, 'Mumbai', 'Active'),
+('Anjali', 'anjali@gmail.com', 2, 32000, 'Pune', 'On Leave'),
+('Vijay', 'vijay@gmail.com', 3, 55000, 'Delhi', 'Active'),
+('Divya', 'divya@gmail.com', 4, 40000, 'Chennai', 'Active'),
+('Ravi', 'ravi@gmail.com', 1, 48000, 'Hyderabad', 'Inactive'),
+('Meena', 'meena@gmail.com', 2, 36000, 'Bangalore', 'Active');
+
+
+-------------------------------- Constraint Practice -----------------------------------------
+---------------------------- An AUTO_INCREMENT value being generated automatically ---------------------
+INSERT INTO employees
+(emp_name, email, department, salary, city, status)
+VALUES
+('deva', 'deva@gmail.com', 1, 30000, 'Chennai', 'Active');
+
+
+----------------------------------- A DEFAULT value being assigned when the column value is not provided -------------------------------
+
+-------------------------------------- A valid ENUM value being inserted -----------------------------------------
+
+INSERT INTO employees
+(emp_name, email, department, salary, city, status)
+VALUES
+('Kavya', 'kavya@gmail.com', 4, 40000, 'Chennai', 'Active');
+
+---------------------------------- Demonstrate Invalid ENUM Value ---------------------
+
+INSERT INTO employees
+(emp_name, email, department, salary, city, status)
+VALUES
+('reddy', 'reddy@gmail.com', 1, 30000, 'Chennai', 'Pending');
+
+
+-------------------------- An attempt to insert a duplicate email and observe the UNIQUE constraint -------------------------
+
+
+INSERT INTO employees
+(emp_name, email, department, salary, city, status)
+VALUES
+('devendra', 'devendra@gmail.com', 2, 40000, 'Chennai', 'Active');
+
+
+---------------------------------- An attempt to insert a NULL employee name and observe the NOT NULL constraint ------------------------
+
+INSERT INTO employees
+(emp_name, email, department, salary, city, status)
+VALUES
+(NULL, 'nullname@gmail.com', 1, 30000, 'Chennai', 'Active');
+
+
+------------------------ An attempt to insert a salary that violates the CHECK condition -----------------------
+
+INSERT INTO employees (emp_name, email, department, salary, city, status)
+VALUES ('Ravi Kumar', 'ravi@gmail.com', 'HR', 5000, 'Hyderabad', 'Active');
+
+------------------------- Foreign Key ------------------------
+
+ALTER TABLE employees
+ADD CONSTRAINT fk_employee_department
+FOREIGN KEY (department)
+REFERENCES departments(dept_id);
+
+======================================= Create another table named departments with ==============================
+
+----------------------------- Insert a minimum of 4 department records -------------------------
+
+INSERT INTO departments (dept_id, dept_name)
+VALUES
+(1, 'IT'),
+(2, 'HR'),
+(3, 'Finance'),
+(4, 'Sales');
+
+--------------------------------- Create a foreign key relationship between the employee table and department table -------------------------
+
+ALTER TABLE employees
+ADD CONSTRAINT fk_employee_department
+FOREIGN KEY (department)
+REFERENCES departments(dept_id);
+
+------------------------------- Insert employee records using valid department IDs -------------------------
+
+INSERT INTO employees
+(emp_name, email, department, salary, city, status)
+VALUES
+('Ravi', 'ravi123@gmail.com', 101, 30000, 'Chennai', 'Active');
+
+---------------------------- invalid department ID ------------------------
+
+INSERT INTO employees
+(emp_name, email, department, salary, city, status)
+VALUES
+('janu', 'janu@gmail.com', 9, 30000, 'Chennai', 'Active');
+
+==================================
