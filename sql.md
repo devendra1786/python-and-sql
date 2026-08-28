@@ -1,1 +1,1 @@
-select * from employe
+# sql
