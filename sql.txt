@@ -1,2 +1,40 @@
-Select * from employe;
+1.CREATE DATABASE CollegeDB;
 
+Output
+====
+Database created
+
+2.CREATE TABLE Student (
+    StudentID INT,
+    StudentName VARCHAR(50),
+    Age INT
+);
+
+
+Output
+====
+Table created
+
+3.INSERT INTO Student (StudentID, StudentName, Age) VALUES (101, 'Rahul', 20);
+
+Output
+====
+1 row created
+
+
+4.SELECT * FROM Student;
+
+Output
+===
+STUDENTID  STUDENTNAME                                   AGE
+---------  ------------------------------------------    ----
+101  	     Rahul					 20
+
+
+5.UPDATE Student SET Age = 21 WHERE StudentID = 101;
+
+Output
+====
+1 row updated
+
+=============================================one==================================================

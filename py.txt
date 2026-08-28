@@ -1,0 +1,54 @@
+1.print("Welcome to Python Programming")#prints the message
+
+Output
+===
+Welcome to Python Programming
+
+
+2.n1=int(input())#reads first input
+n2=int(input())#reads the second input
+print("Sum=",n1+n2)#prints sum
+
+Output
+====
+15
+25
+Sum=40
+
+3.n1=int(input())#reads input
+if(n1%2==0):#checks if ondition
+    print("Even")#prints when condition is true
+else:#if condition is false then
+    print("Odd")#prints when condition is false
+
+Output
+===
+12
+Even
+
+4.num=int(input())#reads the input
+for i in range(1,num+1):#loop that iterates until the condition false
+    print(i)#each and every time it prints value
+
+Output
+====
+10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+5.def greet():#method declaration
+    print("Hello, Welcome!")#method body
+greet()#method calling
+
+Output
+===
+Hello, Welcome!
+=================================================one================================================
