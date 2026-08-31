@@ -3,5 +3,5 @@ def student_details(name, age, course):
     print("Age:", age)
     print("Course:", course)
 
-# Calling the function using positional arguments
-student_details("Deva", 21, "Python")
+
+student_details(name="Deva", age=21, course="Python")
