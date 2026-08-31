@@ -1,7 +1,5 @@
-def student_details(name, age, course):
+def introduce(name, course="Python"):
     print("Name:", name)
-    print("Age:", age)
     print("Course:", course)
 
-
-student_details(course="Python", name="Deva", age=21)
+introduce("Deva") 
