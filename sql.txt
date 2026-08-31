@@ -482,4 +482,178 @@ INSERT INTO employees
 VALUES
 ('janu', 'janu@gmail.com', 9, 30000, 'Chennai', 'Active');
 
-==================================
+==================================TASK6=======================================
+
+------------------------------------------ Create two tables --------------------------------------------
+
+CREATE DATABASE company_db;
+
+USE company_db;
+
+CREATE TABLE departments (
+    department_id INT PRIMARY KEY,
+    department_name VARCHAR(50),
+    location VARCHAR(50)
+);
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY AUTO_INCREMENT,
+    emp_name VARCHAR(50),
+    department_id INT,
+    salary DECIMAL(10,2)
+);
+
+INSERT INTO departments (department_id, department_name, location)
+VALUES
+(1, 'IT', 'Chennai'),
+(2, 'HR', 'Bangalore'),
+(3, 'Finance', 'Hyderabad'),
+(4, 'Sales', 'Mumbai');
+
+INSERT INTO employees (emp_name, department_id, salary)
+VALUES
+('Rahul', 1, 55000),
+('Priya', 2, 45000),
+('Arun', 1, 60000),
+('Sneha', 3, 50000),
+('Kiran', 4, 48000),
+('Anil', 3, 65000),
+('deva', 5, 70000);
+
+SELECT * FROM employees;
+SELECT * FROM departments;
+
+---------------------------------------- INNER JOIN ----------------------------------------------------------
+
+SELECT
+    e.emp_id,
+    e.emp_name,
+    e.department_id,
+    d.department_name,
+    d.location,
+    e.salary
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id;
+
+------------------------------------------------ Write an INNER JOIN query to display --------------------------------------
+
+SELECT
+    e.emp_id AS Employee_ID,
+    e.emp_name AS Employee_Name,
+    d.department_name AS Department_Name,
+    e.salary AS Salary
+FROM employees e
+INNER JOIN departments d
+ON e.department_id = d.department_id;
+
+--------------------------------------- LEFT JOIN -----------------------------------------------------
+
+SELECT
+    e.emp_id AS Employee_ID,
+    e.emp_name AS Employee_Name,
+    d.department_name AS Department_Name,
+    e.salary AS Salary
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id
+WHERE d.department_id IS NOT NULL;
+
+---------------------------------- Write a LEFT JOIN query to display all employees, along with their department name if a matching department exists ----------------------------------
+
+SELECT
+    e.emp_id AS Employee_ID,
+    e.emp_name AS Employee_Name,
+    d.department_name AS Department_Name,
+    e.salary AS Salary
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id;
+
+
+---------------------------------------- Identify the employees who do not have a matching department ----------------------------------
+
+SELECT
+    e.emp_id AS Employee_ID,
+    e.emp_name AS Employee_Name,
+    e.department_id AS Department_ID
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id
+WHERE d.department_id IS NULL;
+
+------------------------------------ RIGHT JOIN ---------------------------------------------
+
+SELECT
+    d.department_id AS Department_ID,
+    d.department_name AS Department_Name,
+    e.emp_id AS Employee_ID,
+    e.emp_name AS Employee_Name,
+    e.salary AS Salary
+FROM employees e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id;
+
+------------------------------------- Identify the departments that currently have no employees -------------------------------
+
+SELECT
+    d.department_id AS Department_ID,
+    d.department_name AS Department_Name,
+    d.location AS Location
+FROM employees e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id
+WHERE e.emp_id IS NULL;
+
+
+----------------------------------- FULL OUTER JOIN ----------------------------------
+
+SELECT
+    e.emp_id AS Employee_ID,
+    e.emp_name AS Employee_Name,
+    d.department_id AS Department_ID,
+    d.department_name AS Department_Name,
+    e.salary AS Salary
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id
+
+UNION
+
+SELECT
+    e.emp_id AS Employee_ID,
+    e.emp_name AS Employee_Name,
+    d.department_id AS Department_ID,
+    d.department_name AS Department_Name,
+    e.salary AS Salary
+FROM employees e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id;
+
+------------------------------------ Display all employees and departments, including records that do not have a match in the other table --------------------------
+
+SELECT
+    e.emp_id AS Employee_ID,
+    e.emp_name AS Employee_Name,
+    e.department_id AS Employee_Department_ID,
+    d.department_id AS Department_ID,
+    d.department_name AS Department_Name,
+    d.location AS Location,
+    e.salary AS Salary
+FROM employees e
+LEFT JOIN departments d
+ON e.department_id = d.department_id
+
+UNION
+
+SELECT
+    e.emp_id AS Employee_ID,
+    e.emp_name AS Employee_Name,
+    e.department_id AS Employee_Department_ID,
+    d.department_id AS Department_ID,
+    d.department_name AS Department_Name,
+    d.location AS Location,
+    e.salary AS Salary
+FROM employees e
+RIGHT JOIN departments d
+ON e.department_id = d.department_id;

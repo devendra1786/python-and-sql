@@ -1010,3 +1010,363 @@ Student Details: {'name': 'Deva', 'age': 23, 'course': 'Python', 'city': 'Tirupa
 ======================================================================================= THANKU =======================================================================
 
 
+------------------------------------ TASK6----------------------------
+------------------------------------ Create a function named greet() that prints a welcome message -------------------
+
+def greet():
+    print("Welcome to Python!")
+
+greet()
+
+---------------------------------- OUTPUT --------------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Welcome to Python!
+
+------------------------------------------------- Create a function named display_details() that prints -------------------------------
+
+def display_details():
+    print("Name: Deva")
+    print("Age: 21")
+    print("Course: Python")
+
+display_details()
+
+------------------------------------- OUTPUT ------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Name: Deva
+Age: 21
+Course: Python
+
+------------------------------------------------ Parameters and Arguments ---------------------------
+
+def greet_user(name):
+    print("Hello", name, "Welcome to Stackly!")
+
+greet_user("Deva")
+greet_user("Priya")
+
+------------------------------ OUTPUT ----------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Hello Deva Welcome to Stackly!
+Hello Priya Welcome to Stackly!
+
+----------------------------------------------- Create a function named add(a, b) that accepts two parameters and prints their sum ------------------------
+
+def add(a, b):
+    print("Sum:", a + b)
+
+add(10, 20)
+
+----------------------------------OUTPUT ----------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Sum: 30
+
+------------------------------------------------------ Positional Arguments ----------------------------------------------
+
+def student_details(name, age, course):
+    print("Name:", name)
+    print("Age:", age)
+    print("Course:", course)
+
+student_details("Deva", 21, "Python")
+
+-------------------------------------------------- OUTPUT ----------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Name: Deva
+Age: 21
+Course: Python
+
+------------------------------------- Call the function using positional arguments and display the details -------------------------------------------------
+
+def student_details(name, age, course):
+    print("Name:", name)
+    print("Age:", age)
+    print("Course:", course)
+
+student_details("Deva", 21, "Python")
+
+--------------------------------------- OUTPUT --------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Name: Deva
+Age: 21
+Course: Python
+
+---------------------------------- Keyword Arguments ------------------------------------------
+
+def student_details(name, age, course):
+    print("Name:", name)
+    print("Age:", age)
+    print("Course:", course)
+
+
+student_details(name="Deva", age=21, course="Python")
+
+--------------------------------- OUTPUT -------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Name: Deva
+Age: 21
+Course: Python
+
+------------------------------------- Change the order of the keyword arguments and verify that the function still works correctly -----------------------------------
+
+def student_details(name, age, course):
+    print("Name:", name)
+    print("Age:", age)
+    print("Course:", course)
+
+
+student_details(course="Python", name="Deva", age=21)
+
+------------------------------------- OUTPUT -------------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Name: Deva
+Age: 21
+Course: Python
+
+----------------------------------------------------- Default Arguments ----------------------------------------------
+
+def introduce(name, course="Python"):
+    print("Name:", name)
+    print("Course:", course)
+
+introduce("Deva") 
+
+----------------------------------------------------- OUTPUT ------------------------------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Name: Deva
+Course: Python
+
+------------------------------------------------------- Call the function ------------------------------------
+
+def introduce(name, course="Python"):
+    print("Name:", name)
+    print("Course:", course)
+
+
+
+introduce("Deva")
+
+print()
+
+introduce("Deva", "Data Science")
+
+------------------------------ OUTPUT --------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Name: Deva
+Course: Python
+
+Name: Deva
+Course: Data Science
+
+------------------------------------------------------------ Variable-Length Arguments ---------------------------------------
+
+def calculate_sum(*args):
+    return sum(args)
+
+result = calculate_sum(10, 20, 30, 40)
+print("Sum:", result)
+
+-------------------------------------------------------------- OUTPUT -----------------------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Sum: 100
+
+----------------------------------------------------------- Call the function by passing different numbers of arguments ------------------------------------------
+
+def calculate_sum(*args):
+    return sum(args)
+
+print("Sum:", calculate_sum(10, 20))
+
+print("Sum:", calculate_sum(10, 20, 30))
+
+print("Sum:", calculate_sum(10, 20, 30, 40, 50))
+
+
+---------------------------------------------------------- OUTPUT ---------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Sum: 30
+Sum: 60
+Sum: 150
+
+--------------------------------------------------------- Create a function named display_details(**kwargs) that accepts multiple key-value pairs and displays them ---------------------
+
+def display_details(**kwargs):
+    for key, value in kwargs.items():
+        print(key, ":", value)
+
+
+display_details(
+    name="Deva",
+    age=21,
+    course="Python",
+    city="Chennai"
+)
+
+---------------------------------------------------------- OUTPUT --------------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+name : Deva
+age : 21
+course : Python
+city : Chennai
+
+----------------------------------------------------------- Call the function by passing details such as ------------------------------------
+
+def display_details(**kwargs):
+    return kwargs
+
+
+details = display_details(
+    name="Deva",
+    age=21,
+    course="Python",
+    city="Chennai"
+)
+
+print("Name:", details["name"])
+print("Age:", details["age"])
+print("Course:", details["course"])
+print("City:", details["city"])
+
+--------------------------------------------------------- OUTPUT -------------------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Name: Deva
+Age: 21
+Course: Python
+City: Chennai
+
+----------------------------------------------- Create a function named multiply(a, b) that returns the multiplication result -------------------------------------
+
+def multiply(a, b):
+    return a * b
+
+result = multiply(10, 5)
+
+print("Multiplication:", result)
+
+------------------------------------------------------------ OUTPUT ---------------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Multiplication: 50
+
+
+---------------------------------------------------- Create a function named is_even(number) that returns whether a given number is even or not ---------------------------------------
+
+def is_even(number):
+    return number % 2 == 0
+
+result = is_even(10)
+
+print("Is the number even?", result)
+
+
+
+----------------------------------------- OUTPUT -------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Is the number even? True
+
+
+--------------------------------------------------- Call the function with different numbers and display the returned results ----------------------------------------
+
+def is_even(number):
+    return number % 2 == 0
+
+
+print("10 is even:", is_even(10))
+print("7 is even:", is_even(7))
+print("20 is even:", is_even(20))
+print("15 is even:", is_even(15))
+
+------------------------------------------ OUTPUT -----------------------------------
+
+PS "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+10 is even: True
+7 is even: False
+20 is even: True
+15 is even: False
+
+------------------------------------------------------ Mini Task -----------------------------------------
+
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    return a / b
+
+
+# Calling the functions
+print("Addition:", add(20, 10))
+print("Subtraction:", subtract(20, 10))
+print("Multiplication:", multiply(20, 10))
+print("Division:", divide(20, 10))
+
+
+--------------------------------------------------- OUTPUT --------------------------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Addition: 30
+Subtraction: 10
+Multiplication: 200
+Division: 2.0
+
+
+-------------------------------------------------------------- Call all four functions and display the results with proper labels -------------------------------------
+
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    return a / b
+
+
+# Call all four functions
+result1 = add(20, 10)
+result2 = subtract(20, 10)
+result3 = multiply(20, 10)
+result4 = divide(20, 10)
+
+# Display results with proper labels
+print("Addition:", result1)
+print("Subtraction:", result2)
+print("Multiplication:", result3)
+print("Division:", result4)
+
+-------------------------------------------------------------- OUTPUT ----------------------------------------------------------
+
+PS C:\Users\KAMASANI TEJA\Downloads\stackly\python-and-sql> & "C:\Users\KAMASANI TEJA\AppData\Local\Programs\Python\Python314\python.exe" "c:/Users/KAMASANI TEJA/Downloads/stackly/python-and-sql/python.py"
+Addition: 30
+Subtraction: 10
+Multiplication: 200
+Division: 2.0
