@@ -1,8 +1,11 @@
-def calculate_sum(*args):
-    return sum(args)
+def display_details(**kwargs):
+    for key, value in kwargs.items():
+        print(key, ":", value)
 
-print("Sum:", calculate_sum(10, 20))
 
-print("Sum:", calculate_sum(10, 20, 30))
-
-print("Sum:", calculate_sum(10, 20, 30, 40, 50))
+display_details(
+    name="Deva",
+    age=21,
+    course="Python",
+    city="Chennai"
+)
