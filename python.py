@@ -1,11 +1,5 @@
-def introduce(name, course="Python"):
-    print("Name:", name)
-    print("Course:", course)
+def calculate_sum(*args):
+    return sum(args)
 
-
-
-introduce("Deva")
-
-print()
-
-introduce("Deva", "Data Science")
+result = calculate_sum(10, 20, 30, 40)
+print("Sum:", result)
