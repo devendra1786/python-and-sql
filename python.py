@@ -1,4 +1,7 @@
-def add(a, b):
-    print("Sum:", a + b)
+def student_details(name, age, course):
+    print("Name:", name)
+    print("Age:", age)
+    print("Course:", course)
 
-add(10, 20)
+# Calling the function using positional arguments
+student_details("Deva", 21, "Python")
