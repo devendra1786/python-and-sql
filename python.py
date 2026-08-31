@@ -4,4 +4,4 @@ def student_details(name, age, course):
     print("Course:", course)
 
 
-student_details(name="Deva", age=21, course="Python")
+student_details(course="Python", name="Deva", age=21)
