@@ -1,2 +1,4 @@
-print("Hello, World!")
-print("This is a sample Python script.")
+def greet():
+    print("Welcome to Python!")
+
+greet()
