@@ -1,5 +1,4 @@
-def greet_user(name):
-    print("Hello", name, "Welcome to Stackly!")
+def add(a, b):
+    print("Sum:", a + b)
 
-greet_user("Deva")
-greet_user("Priya")
+add(10, 20)
