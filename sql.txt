@@ -657,3 +657,322 @@ SELECT
 FROM employees e
 RIGHT JOIN departments d
 ON e.department_id = d.department_id;
+
+=========================== TASK7 ============================================
+
+============================================================= SQL ===========================================================
+
+---------------------------------------------- MySQL – Aggregation Functions & GROUP BY --------------------------------------------
+
+CREATE DATABASE company_db;
+
+USE company_db;
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    department VARCHAR(50),
+    salary DECIMAL(10,2),
+    city VARCHAR(50)
+);
+
+-------------------------------------------------- Insert a minimum of 12 employee records -----------------------------------------------------
+
+INSERT INTO employees (emp_id, emp_name, department, salary, city)
+VALUES
+(1, 'Rahul',   'IT',      45000, 'Hyderabad'),
+(2, 'Priya',   'HR',      32000, 'Chennai'),
+(3, 'Arun',    'IT',      55000, 'Hyderabad'),
+(4, 'Sneha',   'Finance', 48000, 'Bangalore'),
+(5, 'Kiran',   'HR',      35000, 'Chennai'),
+(6, 'Anjali',  'IT',      60000, 'Bangalore'),
+(7, 'Vijay',   'Finance', 52000, 'Hyderabad'),
+(8, 'Pooja',   'Sales',   30000, 'Chennai'),
+(9, 'Ravi',    'Sales',   38000, 'Hyderabad'),
+(10, 'Divya',   'Finance', 45000, 'Bangalore'),
+(11, 'Suresh',  'IT',      50000, 'Chennai'),
+(12, 'Meena',   'Sales',   42000, 'Hyderabad');
+
+------------------------------------------ Aggregation Functions ----------------------------------------------------------------
+
+SELECT COUNT(*) AS total_employees
+FROM employees;
+
+-------------------------------------------- Find the number of employees in a particular department -----------------------------------
+
+
+SELECT COUNT(*) AS Finance_employees
+FROM employees
+WHERE department = 'Finance';
+
+SELECT COUNT(*) AS IT_employees
+FROM employees
+WHERE department = 'IT';
+
+--------------------------------------------------- Count the number of employees whose salary is greater than 30000 --------------------------------------------
+
+SELECT COUNT(*) AS employees_above_30000
+FROM employees
+WHERE salary > 30000;
+
+---------------------------------------------------- Use SUM() -----------------------------------------------------------------
+
+--------------------------------------------------- Find the total salary of all employees -------------------------------------------
+
+SELECT SUM(salary) AS total_salary
+FROM employees;
+
+------------------------------------------- Find the total salary of employees in a particular department ------------------------------------
+
+SELECT SUM(salary) AS IT_total_salary
+FROM employees
+WHERE department = 'IT';
+
+----------------------------------------------------
+
+SELECT department, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department;
+
+
+---------------------------------------- Find the average salary of all employees ------------------------------------------------
+
+SELECT AVG(salary) AS average_salary
+FROM employees;
+
+-------------------------------------------- Find the average salary of employees in a particular department ------------------------------------------
+
+SELECT AVG(salary) AS average_salary
+FROM employees
+WHERE department = 'IT';
+
+--------------------------------------------
+
+SELECT department, AVG(salary) AS average_salary
+FROM employees
+GROUP BY department;
+
+
+----------------------------------------------- Find the minimum salary among all employees ---------------------------------------
+
+SELECT MIN(salary) AS minimum_salary
+FROM employees;
+
+---------------------------------------------- Find the minimum salary in a particular department ---------------------------------
+
+SELECT MIN(salary) AS IT_minimum_salary
+FROM employees
+WHERE department = 'IT';
+
+-----------------------------------------------
+
+SELECT department, MIN(salary) AS minimum_salary
+FROM employees
+GROUP BY department;
+
+--------------------------------------------------- Find the maximum salary among all employees -----------------------------------------------
+
+SELECT MAX(salary) AS maximum_salary
+FROM employees;
+
+----------------------------------------------------- Find the maximum salary in a particular department ----------------------------------------
+
+SELECT MAX(salary) AS IT_maximum_salary
+FROM employees
+WHERE department = 'IT';
+
+---------------------------------------------
+
+SELECT department, MAX(salary) AS maximum_salary
+FROM employees
+GROUP BY department;
+
+---------------------------------------------------- Group employees by department and display --------------------------------------
+
+SELECT 
+    department,
+    COUNT(*) AS number_of_employees
+FROM employees
+GROUP BY department;
+
+---------------------------------------
+
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department;
+
+-----------------------------------------
+
+SELECT department, GROUP_CONCAT(emp_name) AS employees
+FROM employees
+GROUP BY department;
+
+---------------------------------------------------- Department name --------------------------------------
+
+SELECT department
+FROM employees;
+
+--------------------------------------- 
+
+SELECT DISTINCT department
+FROM employees;
+
+---------------------------------------------- Number of employees in each department -----------------------------------
+
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department;
+
+-------------------------------------------- Group employees by department and display -----------------------------------
+
+SELECT department
+FROM employees
+GROUP BY department;
+
+---------------------------------------------
+
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department;
+
+----------------------------------------------- Total salary of each department -------------------------------------
+
+SELECT 
+    department,
+    SUM(salary) AS total_salary
+FROM employees
+GROUP BY department;
+
+--------------------------------------------- Average salary of each department ----------------------------------
+
+SELECT 
+    department,
+    AVG(salary) AS average_salary
+FROM employees
+GROUP BY department;
+
+----------------------------------------------- Group employees by department and display ------------------------------------
+
+SELECT department, AVG(salary) AS average_salary
+FROM employees
+GROUP BY department;
+
+--------------------------------------- Minimum and Maximum salary by department --------------------------------------------
+
+SELECT 
+    department,
+    MIN(salary) AS minimum_salary,
+    MAX(salary) AS maximum_salary
+FROM employees
+GROUP BY department;
+
+----------------------------------------- Group employees by city and display the number of employees in each city ---------------------------------------
+
+SELECT 
+    city,
+    COUNT(*) AS number_of_employees
+FROM employees
+GROUP BY city;
+
+
+------------------------------------- Group employees by city and display the average salary in each city --------------------------------------
+
+SELECT 
+    city,
+    AVG(salary) AS average_salary
+FROM employees
+GROUP BY city;
+
+-------------------------------------------- Combined Aggregation & Grouping ---------------------------------------
+
+SELECT 
+    department,
+    COUNT(*) AS number_of_employees,
+    SUM(salary) AS total_salary,
+    AVG(salary) AS average_salary,
+    MIN(salary) AS minimum_salary,
+    MAX(salary) AS maximum_salary
+FROM employees
+GROUP BY department;
+
+----------------------------- Department-wise employee count and total salary -------------------------
+
+SELECT 
+    department,
+    COUNT(*) AS employee_count,
+    SUM(salary) AS total_salary
+FROM employees
+GROUP BY department;
+
+-------------------------------- Department-wise average, minimum, and maximum salary ---------------------------------------
+
+SELECT 
+    department,
+    AVG(salary) AS average_salary,
+    MIN(salary) AS minimum_salary,
+    MAX(salary) AS maximum_salary
+FROM employees
+GROUP BY department;
+
+-------------------------------------- City-wise employee count and average salary ---------------------------------------
+
+SELECT 
+    city,
+    COUNT(*) AS employee_count,
+    AVG(salary) AS average_salary
+FROM employees
+GROUP BY city;
+
+-------------------------------------- Complete department-wise summary ----------------------
+
+SELECT 
+    department,
+    COUNT(*) AS employee_count,
+    SUM(salary) AS total_salary,
+    AVG(salary) AS average_salary,
+    MIN(salary) AS minimum_salary,
+    MAX(salary) AS maximum_salary
+FROM employees
+GROUP BY department;
+
+------------------------------------ Write a query to find the department with the highest total salary --------------------------------------
+
+SELECT 
+    department,
+    SUM(salary) AS total_salary
+FROM employees
+GROUP BY department
+ORDER BY total_salary DESC
+LIMIT 1;
+
+------------------------------------------- Write a query to find the department with the highest average salary --------------------------
+
+SELECT 
+    department,
+    AVG(salary) AS average_salary
+FROM employees
+GROUP BY department
+ORDER BY average_salary DESC
+LIMIT 1;
+
+------------------------------------------------- Write a query to find the city with the maximum number of employees ----------------------------------
+
+SELECT 
+    city,
+    COUNT(*) AS employee_count
+FROM employees
+GROUP BY city
+ORDER BY employee_count DESC
+LIMIT 1;
+
+========================================================================== THANKU ===============================================================
+
+
+
+
+
+
+
+
+
+

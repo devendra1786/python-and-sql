@@ -59,30 +59,30 @@
 # print("Multiplication:", multiply(20, 10))
 # print("Division:", divide(20, 10))
 
-def add(a, b):
-    return a + b
+# def add(a, b):
+#     return a + b
 
 
-def subtract(a, b):
-    return a - b
+# def subtract(a, b):
+#     return a - b
 
 
-def multiply(a, b):
-    return a * b
+# def multiply(a, b):
+#     return a * b
 
 
-def divide(a, b):
-    return a / b
+# def divide(a, b):
+#     return a / b
 
 
-# Call all four functions
-result1 = add(20, 10)
-result2 = subtract(20, 10)
-result3 = multiply(20, 10)
-result4 = divide(20, 10)
+# # Call all four functions
+# result1 = add(20, 10)
+# result2 = subtract(20, 10)
+# result3 = multiply(20, 10)
+# result4 = divide(20, 10)
 
-# Display results with proper labels
-print("Addition:", result1)
-print("Subtraction:", result2)
-print("Multiplication:", result3)
-print("Division:", result4)
+# # Display results with proper labels
+# print("Addition:", result1)
+# print("Subtraction:", result2)
+# print("Multiplication:", result3)
+# print("Division:", result4)
