@@ -1,2 +1,1 @@
-# python-and-sql
-# stackly 
+python and sql
