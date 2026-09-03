@@ -1,192 +1,311 @@
-# # # # # # # # # # # # # def display_details(**kwargs):
-# # # # # # # # # # # # #     return kwargs
+# # # # # # # # # # # # # # # def display_details(**kwargs):
+# # # # # # # # # # # # # # #     return kwargs
 
 
-# # # # # # # # # # # # # details = display_details(
-# # # # # # # # # # # # #     name="Deva",
-# # # # # # # # # # # # #     age=21,
-# # # # # # # # # # # # #     course="Python",
-# # # # # # # # # # # # #     city="Chennai"
-# # # # # # # # # # # # # )
+# # # # # # # # # # # # # # # details = display_details(
+# # # # # # # # # # # # # # #     name="Deva",
+# # # # # # # # # # # # # # #     age=21,
+# # # # # # # # # # # # # # #     course="Python",
+# # # # # # # # # # # # # # #     city="Chennai"
+# # # # # # # # # # # # # # # )
 
-# # # # # # # # # # # # # print("Name:", details["name"])
-# # # # # # # # # # # # # print("Age:", details["age"])
-# # # # # # # # # # # # # print("Course:", details["course"])
-# # # # # # # # # # # # # print("City:", details["city"])
+# # # # # # # # # # # # # # # print("Name:", details["name"])
+# # # # # # # # # # # # # # # print("Age:", details["age"])
+# # # # # # # # # # # # # # # print("Course:", details["course"])
+# # # # # # # # # # # # # # # print("City:", details["city"])
 
-# # # # # # # # # # # # # def multiply(a, b):
-# # # # # # # # # # # # #     return a * b
+# # # # # # # # # # # # # # # def multiply(a, b):
+# # # # # # # # # # # # # # #     return a * b
 
-# # # # # # # # # # # # # result = multiply(10, 5)
+# # # # # # # # # # # # # # # result = multiply(10, 5)
 
-# # # # # # # # # # # # # print("Multiplication:", result)
+# # # # # # # # # # # # # # # print("Multiplication:", result)
 
-# # # # # # # # # # # # # def is_even(number):
-# # # # # # # # # # # # #     return number % 2 == 0
+# # # # # # # # # # # # # # # def is_even(number):
+# # # # # # # # # # # # # # #     return number % 2 == 0
 
-# # # # # # # # # # # # # result = is_even(10)
+# # # # # # # # # # # # # # # result = is_even(10)
 
-# # # # # # # # # # # # # print("Is the number even?", result)
+# # # # # # # # # # # # # # # print("Is the number even?", result)
 
-# # # # # # # # # # # # # def is_even(number):
-# # # # # # # # # # # # #     return number % 2 == 0
+# # # # # # # # # # # # # # # def is_even(number):
+# # # # # # # # # # # # # # #     return number % 2 == 0
 
-# # # # # # # # # # # # # # Calling the function with different numbers
-# # # # # # # # # # # # # print("10 is even:", is_even(10))
-# # # # # # # # # # # # # print("7 is even:", is_even(7))
-# # # # # # # # # # # # # print("20 is even:", is_even(20))
-# # # # # # # # # # # # # print("15 is even:", is_even(15))
+# # # # # # # # # # # # # # # # Calling the function with different numbers
+# # # # # # # # # # # # # # # print("10 is even:", is_even(10))
+# # # # # # # # # # # # # # # print("7 is even:", is_even(7))
+# # # # # # # # # # # # # # # print("20 is even:", is_even(20))
+# # # # # # # # # # # # # # # print("15 is even:", is_even(15))
 
-# # # # # # # # # # # # # def add(a, b):
-# # # # # # # # # # # # #     return a + b
-
-
-# # # # # # # # # # # # # def subtract(a, b):
-# # # # # # # # # # # # #     return a - b
+# # # # # # # # # # # # # # # def add(a, b):
+# # # # # # # # # # # # # # #     return a + b
 
 
-# # # # # # # # # # # # # def multiply(a, b):
-# # # # # # # # # # # # #     return a * b
+# # # # # # # # # # # # # # # def subtract(a, b):
+# # # # # # # # # # # # # # #     return a - b
 
 
-# # # # # # # # # # # # # def divide(a, b):
-# # # # # # # # # # # # #     return a / b
+# # # # # # # # # # # # # # # def multiply(a, b):
+# # # # # # # # # # # # # # #     return a * b
 
 
-# # # # # # # # # # # # # # Calling the functions
-# # # # # # # # # # # # # print("Addition:", add(20, 10))
-# # # # # # # # # # # # # print("Subtraction:", subtract(20, 10))
-# # # # # # # # # # # # # print("Multiplication:", multiply(20, 10))
-# # # # # # # # # # # # # print("Division:", divide(20, 10))
-
-# # # # # # # # # # # # # def add(a, b):
-# # # # # # # # # # # # #     return a + b
+# # # # # # # # # # # # # # # def divide(a, b):
+# # # # # # # # # # # # # # #     return a / b
 
 
-# # # # # # # # # # # # # def subtract(a, b):
-# # # # # # # # # # # # #     return a - b
+# # # # # # # # # # # # # # # # Calling the functions
+# # # # # # # # # # # # # # # print("Addition:", add(20, 10))
+# # # # # # # # # # # # # # # print("Subtraction:", subtract(20, 10))
+# # # # # # # # # # # # # # # print("Multiplication:", multiply(20, 10))
+# # # # # # # # # # # # # # # print("Division:", divide(20, 10))
+
+# # # # # # # # # # # # # # # def add(a, b):
+# # # # # # # # # # # # # # #     return a + b
 
 
-# # # # # # # # # # # # # def multiply(a, b):
-# # # # # # # # # # # # #     return a * b
+# # # # # # # # # # # # # # # def subtract(a, b):
+# # # # # # # # # # # # # # #     return a - b
 
 
-# # # # # # # # # # # # # def divide(a, b):
-# # # # # # # # # # # # #     return a / b
+# # # # # # # # # # # # # # # def multiply(a, b):
+# # # # # # # # # # # # # # #     return a * b
 
 
-# # # # # # # # # # # # # # Call all four functions
-# # # # # # # # # # # # # result1 = add(20, 10)
-# # # # # # # # # # # # # result2 = subtract(20, 10)
-# # # # # # # # # # # # # result3 = multiply(20, 10)
-# # # # # # # # # # # # # result4 = divide(20, 10)
-
-# # # # # # # # # # # # # # Display results with proper labels
-# # # # # # # # # # # # # print("Addition:", result1)
-# # # # # # # # # # # # # print("Subtraction:", result2)
-# # # # # # # # # # # # # print("Multiplication:", result3)
-# # # # # # # # # # # # # print("Division:", result4)
+# # # # # # # # # # # # # # # def divide(a, b):
+# # # # # # # # # # # # # # #     return a / b
 
 
-# # # # # # # # # # # # # message = "Hello Python"
+# # # # # # # # # # # # # # # # Call all four functions
+# # # # # # # # # # # # # # # result1 = add(20, 10)
+# # # # # # # # # # # # # # # result2 = subtract(20, 10)
+# # # # # # # # # # # # # # # result3 = multiply(20, 10)
+# # # # # # # # # # # # # # # result4 = divide(20, 10)
 
-# # # # # # # # # # # # # print(message)
+# # # # # # # # # # # # # # # # Display results with proper labels
+# # # # # # # # # # # # # # # print("Addition:", result1)
+# # # # # # # # # # # # # # # print("Subtraction:", result2)
+# # # # # # # # # # # # # # # print("Multiplication:", result3)
+# # # # # # # # # # # # # # # print("Division:", result4)
+
+
+# # # # # # # # # # # # # # # message = "Hello Python"
+
+# # # # # # # # # # # # # # # print(message)
+
+# # # # # # # # # # # # # # # message = "DEVENDRA"
+
+# # # # # # # # # # # # # # # print(message)
+
+# # # # # # # # # # # # # # message = "DEVENDRA REDDY"
+
+# # # # # # # # # # # # # # print(message[0])
+# # # # # # # # # # # # # # print(message[1])
+# # # # # # # # # # # # # # print(message[2])
+# # # # # # # # # # # # # # print(message[3])
+# # # # # # # # # # # # # # # print(message[4])
 
 # # # # # # # # # # # # # message = "DEVENDRA"
+# # # # # # # # # # # # # name = "REDDY"
 
-# # # # # # # # # # # # # print(message)
+# # # # # # # # # # # # # result = message + " " + name
 
-# # # # # # # # # # # # message = "DEVENDRA REDDY"
+# # # # # # # # # # # # # print(result)
 
-# # # # # # # # # # # # print(message[0])
-# # # # # # # # # # # # print(message[1])
-# # # # # # # # # # # # print(message[2])
-# # # # # # # # # # # # print(message[3])
-# # # # # # # # # # # # # print(message[4])
+# # # # # # # # # # # # message = "DEVENDRA "
 
-# # # # # # # # # # # message = "DEVENDRA"
-# # # # # # # # # # # name = "REDDY"
+# # # # # # # # # # # # result = message * 3
 
-# # # # # # # # # # # result = message + " " + name
+# # # # # # # # # # # # print(result)
 
-# # # # # # # # # # # print(result)
+# # # # # # # # # # # string1 = "I am learning"
+# # # # # # # # # # # string2 = "Python & Sql programming."
 
-# # # # # # # # # # message = "DEVENDRA "
+# # # # # # # # # # # sentence = string1 + " " + string2
+
+# # # # # # # # # # # print(sentence)
+
+# # # # # # # # # # message = "DEVA "
 
 # # # # # # # # # # result = message * 3
 
 # # # # # # # # # # print(result)
 
-# # # # # # # # # string1 = "I am learning"
-# # # # # # # # # string2 = "Python & Sql programming."
+# # # # # # # # # message = '''
+# # # # # # # # # hello,
 
-# # # # # # # # # sentence = string1 + " " + string2
+# # # # # # # # # This is
+# # # # # # # # # deva.
+# # # # # # # # # '''
 
-# # # # # # # # # print(sentence)
+# # # # # # # # # print(message)
 
-# # # # # # # # message = "DEVA "
+# # # # # # # # message = """hello
 
-# # # # # # # # result = message * 3
+# # # # # # # # This is
+# # # # # # # # deva."""
 
-# # # # # # # # print(result)
+# # # # # # # # print(message)
 
-# # # # # # # message = '''
-# # # # # # # hello,
+# # # # # # # name = "kamasani reddy"
 
-# # # # # # # This is
-# # # # # # # deva.
-# # # # # # # '''
+# # # # # # # print("Original:", name)
+# # # # # # # print("Uppercase:", name.upper())
+# # # # # # # print("Lowercase:", name.lower())
+# # # # # # # print("Title Case:", name.title())
+# # # # # # # print("Capitalize:", name.capitalize())
 
-# # # # # # # print(message)
+# # # # # # sentence = "Python is easy to learn and Python is powerful."
 
-# # # # # # message = """hello
+# # # # # # # Find the position of a substring
+# # # # # # position = sentence.find("Python")
+# # # # # # print("Position of 'Python':", position)
 
-# # # # # # This is
-# # # # # # deva."""
+# # # # # # # Count how many times a substring occurs
+# # # # # # count = sentence.count("Python")
+# # # # # # print("Number of times 'Python' occurs:", count)
 
-# # # # # # print(message)
+# # # # # sentence = "Hello Devendra"
 
-# # # # # name = "kamasani reddy"
+# # # # # words = sentence.split()
 
-# # # # # print("Original:", name)
-# # # # # print("Uppercase:", name.upper())
-# # # # # print("Lowercase:", name.lower())
-# # # # # print("Title Case:", name.title())
-# # # # # print("Capitalize:", name.capitalize())
+# # # # # print(words)
 
-# # # # sentence = "Python is easy to learn and Python is powerful."
+# # # # text = "Python123"
 
-# # # # # Find the position of a substring
-# # # # position = sentence.find("Python")
-# # # # print("Position of 'Python':", position)
+# # # # print(text.isalpha())   # False
+# # # # print(text.isdigit())   # False
+# # # # print(text.isalnum())   # True
+# # # # print(text.islower())   # False
+# # # # print(text.isupper())   # False
 
-# # # # # Count how many times a substring occurs
-# # # # count = sentence.count("Python")
-# # # # print("Number of times 'Python' occurs:", count)
+# # # words = ["I", "am", "Devendra"]
 
-# # # sentence = "Hello Devendra"
+# # # sentence = " ".join(words)
 
-# # # words = sentence.split()
+# # # print(sentence)
 
-# # # print(words)
+# # filename = input("Enter a filename: ")
 
-# # text = "Python123"
+# # if filename.endswith(".py"):
+# #     print("The file is a Python file.")
+# # else:
+# #     print("The file is not a Python file.")
 
-# # print(text.isalpha())   # False
-# # print(text.isdigit())   # False
-# # print(text.isalnum())   # True
-# # print(text.islower())   # False
-# # print(text.isupper())   # False
+# name = "Teja"
+# age = 22
+# course = "Python"
+# city = "Hyderabad"
 
-# words = ["I", "am", "Devendra"]
+# print(name)
+# print(age)
+# print(course)
+# print(city)
 
-# sentence = " ".join(words)
+# name = "Teja"
+# age = 22
+# course = "Python"
+# city = "Hyderabad"
 
-# print(sentence)
+# print(f"Name: {name}, Age: {age}, Course: {course}, City: {city}")
 
-filename = input("Enter a filename: ")
+# name = "Teja"
+# age = 22
+# course = "Python"
+# city = "Hyderabad"
 
-if filename.endswith(".py"):
-    print("The file is a Python file.")
-else:
-    print("The file is not a Python file.")
+# print(f"Name: {name}\nAge: {age}\nCourse: {course}\nCity: {city}")
+
+# print("Name\tAge\tCourse\tCity")
+# print("Teja\t22\tPython\tHyderabad")
+
+# name = input("Enter your name: ")
+# age = input("Enter your age: ")
+# course = input("Enter your course: ")
+# city = input("Enter your city: ")
+
+# print("\nStudent Details")
+# print("----------------")
+# print(f"Name: {name}")
+# print(f"Age: {age}")
+# print(f"Course: {course}")
+# print(f"City: {city}")
+
+# name = input("Enter your name: ")
+
+# print("Name in uppercase:", name.upper())
+
+# name = input("Enter your name: ")
+
+# print("Name in title case:", name.title())
+
+# name = input("Enter your name: ")
+
+# if name.startswith("A"):
+#     print("The name starts with A.")
+# else:
+#     print("The name does not start with A.")
+
+# city = input("Enter your city: ")
+
+# if city.endswith("i"):
+#     print("The city ends with i.")
+# else:
+#     print("The city does not end with i.")
+
+# name = input("Enter your name: ")
+
+# print("Number of characters:", len(name))
+# name = input("Enter your name: ")
+# age = input("Enter your age: ")
+# course = input("Enter your course: ")
+# city = input("Enter your city: ")
+
+# print(f"Name: {name}, Age: {age}, Course: {course}, City: {city}")
+
+# name = input("Enter your name: ")
+# age = input("Enter your age: ")
+# course = input("Enter your course: ")
+# city = input("Enter your city: ")
+
+# print("\nStudent Details")
+# print("\tName\t:", name)
+# print("\tAge\t:", age)
+# print("\tCourse\t:", course)
+# print("\tCity\t:", city)
+
+# text = input("Enter a string: ")
+
+# if text.startswith("A"):
+#     print('The string starts with "A".')
+# else:
+#     print('The string does not start with "A".')
+
+# if text.endswith("n"):
+#     print('The string ends with "n".')
+# else:
+#     print('The string does not end with "n".')
+
+# value = input("Enter a value: ")
+
+# # Check the type of characters
+# if value.isdigit():
+#     print("Only numbers")
+# elif value.isalpha():
+#     print("Only alphabets")
+# elif value.isalnum():
+#     print("Both alphabets and numbers")
+# else:
+#     print("Other characters")
+
+# # Check startswith()
+# if value.startswith("A"):
+#     print('Starts with "A"')
+# else:
+#     print('Does not start with "A"')
+
+# # Check endswith()
+# if value.endswith("n"):
+#     print('Ends with "n"')
+# else:
+#     print('Does not end with "n"')
+
